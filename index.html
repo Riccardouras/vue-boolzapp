@@ -11,7 +11,8 @@
 <body class="gradient">
     <main id="app" class="container flex">
         <!-- sidebar -->
-        <section class="contacts-box">
+        <section class="contacts-box height bg-white">
+            <!-- card header -->
             <div class="flex justify-space-between headed">
                 <div>
                     <img src="./img/avatar_1.jpg" alt="userPic">
@@ -23,6 +24,7 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
+            <!-- notice -->
             <div class="flex notice">
                 <div>
                     <i class="fa-solid fa-bell-slash"></i>
@@ -32,6 +34,7 @@
                     <a href="">Attiva notifiche desktop</a>
                 </div>
             </div>
+            <!-- search-bar -->
             <div>
                 <label for="name" class="relative">
                     <i class="fa-solid fa-magnifying-glass absolute"></i>
@@ -39,25 +42,26 @@
                     cerca o inizia una nuova chat">
                 </label>
             </div>
-            <div v-for="(user, index) in contacts" class="flex">
-                <div>
-                    <img :src="user.avatar" :alt="user.name">
-                </div>
-                <div>
+            <!-- users -->
+            <div v-for="(user, index) in contacts" class="flex justify-space-between border-btm margin-top">
+                <div class="flex">
                     <div>
-                        <p>{{user.name}}</p>
-                        <p>Ultimo messaggio inviato</p>
+                        <img :src="user.avatar" :alt="user.name">
+                    </div>
+                    <div>
+                        <div>
+                            <p>{{user.name}}</p>
+                            <p>Ultimo messaggio inviato</p>
+                        </div>    
                     </div>
                 </div>
+                <!-- time -->
                 <div>
-                    <ul>
-                    <li>
-                        <p>12.00</p>
-                    </li>
-                    </ul>
+                     <p>12.00</p>
                 </div>
             </div>
         </section>
+        <!-- text box -->
         <section class="chat-box">
             <div class="flex justify-space-between headed">
                 <div>

@@ -41,17 +41,17 @@
             </div>
             <div v-for="(user, index) in contacts" class="flex">
                 <div>
-                    <img :src="contacts.avatar" :alt="contacts.name">
+                    <img :src="user.avatar" :alt="user.name">
                 </div>
                 <div>
                     <div>
-                        <p>{{name}}</p>
+                        <p>{{user.name}}</p>
                         <p>Ultimo messaggio inviato</p>
                     </div>
                 </div>
                 <div>
                     <ul>
-                    <li v-for="message in contact.messages">
+                    <li v-for="message in contacts.messages">
                         <p>{{ message.date }}</p>
                     </li>
                     </ul>

@@ -6,11 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue-boolzapp</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="gradient">
-    <main>
+    <main id="app" class="container flex">
         <!-- sidebar -->
+        <section class="contacts-box">
+            <div class="flex justify-space-between headed">
+                <div>
+                    <img src="./img/avatar_1.jpg" alt="userPic">
+                    <span>Sofia</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <div class="flex notice">
+                <div>
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div>
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <a href="">Attiva notifiche desktop</a>
+                </div>
+            </div>
+            <div>
+                <label for="name">
+                    <input type="search">
+                </label>
+            </div>
+            <div></div>
+        </section>
+        <section class="chat-box">
+            <div class="flex justify-space-between headed">
+                <div>
+                    <img src="./img/avatar_2.jpg" alt="userPic">
+                </div>
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
+        </section>
     </main>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

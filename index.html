@@ -14,9 +14,9 @@
         <section class="contacts-box height bg-white">
             <!-- card header -->
             <div class="flex justify-space-between headed">
-                <div>
+                <div class="flex align-center">
                     <img src="./img/avatar_1.jpg" alt="userPic">
-                    <span>Sofia</span>
+                    <p class="">Sofia</p>
                 </div>
                 <div class="icon-box flex gap margin-right">
                     <i class="fa-solid fa-circle-notch"></i>
@@ -43,29 +43,36 @@
                 </label>
             </div>
             <!-- users -->
-            <div v-for="(user, index) in contacts" class="flex justify-space-between border-btm margin-top">
-                <div class="flex">
-                    <div>
-                        <img :src="user.avatar" :alt="user.name">
-                    </div>
-                    <div>
+            <section class="scroll">
+                <div v-for="(user, index) in contacts" class="flex justify-space-between border-btm margin-top pad">
+                    <div class="flex">
                         <div>
-                            <p>{{user.name}}</p>
-                            <p>Ultimo messaggio inviato</p>
-                        </div>    
+                            <img :src="user.avatar" :alt="user.name">
+                        </div>
+                        <div>
+                            <div>
+                                <p>{{user.name}}</p>
+                                <p>Ultimo messaggio inviato</p>
+                            </div>    
+                        </div>
+                    </div>
+                    <!-- time -->
+                    <div>
+                        <p>12.00</p>
                     </div>
                 </div>
-                <!-- time -->
-                <div>
-                     <p>12.00</p>
-                </div>
-            </div>
+            </section>
         </section>
         <!-- text box -->
         <section class="chat-box">
             <div class="flex justify-space-between headed">
-                <div>
+                <div class="flex align-center">
                     <img src="./img/avatar_2.jpg" alt="userPic">
+                    <div>
+                        <p>Michele</p>
+                        <p>Ultimo accesso oggi alle 12:00</p>
+                    </div>
+                    
                 </div>
                 <div class="icon-box flex  gap margin-right">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -73,8 +80,19 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
-            <div class="chat-div height ">
+            <div class="chat-div height-second-el ">
 
+            </div>
+            <div class="flex justify-space-around bg-chat">
+                <div class="icon-box">
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div>
+                    <input type="text" placeholder="scrivi un messaggio" class="input-message"> 
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-microphone"></i>
+                </div >
             </div>
         </section>
     </main>

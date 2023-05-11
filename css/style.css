@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0%;
     margin: 0;
+    font-family: sans-serif;
 }
 .gradient {
     background: no-repeat linear-gradient(to bottom, #029589 17%,#DFDAD4 17%);
@@ -15,6 +16,12 @@
 }
 .justify-space-between{
     justify-content: space-between ;
+}
+.justify-space-around{
+    justify-content: space-around ;
+}
+.align-center{
+    align-items: center;
 }
 .container{
     max-width: 1540px;
@@ -58,6 +65,9 @@ img{
     background-image: url(../img/mine.jpg);
 }
 .height{
+    height: 747px;
+}
+.height-second-el{
     height: 650px;
 }
 .icon-box{
@@ -81,6 +91,20 @@ li{
 .margin-top{
     margin-top: 5px;
 }
-.bg-white >div:hover{
+.border-btm:hover{
     background-color: #B1B1B1;
+}
+.bg-chat{
+    background-color: #F3EEEA;
+}
+.input-message{
+    padding: 10px;
+    width: 500px;
+}
+.pad{
+    padding: 20px;
+}
+.scroll{
+    overflow-y: auto;
+    height: 628px;
 }

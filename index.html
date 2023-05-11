@@ -17,7 +17,7 @@
                     <img src="./img/avatar_1.jpg" alt="userPic">
                     <span>Sofia</span>
                 </div>
-                <div>
+                <div class="icon-box flex gap margin-right">
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-message"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -33,24 +33,45 @@
                 </div>
             </div>
             <div>
-                <label for="name">
-                    <input type="search">
+                <label for="name" class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute"></i>
+                    <input class="input-size" type="search" placeholder="
+                    cerca o inizia una nuova chat">
                 </label>
             </div>
-            <div></div>
+            <div v-for="(user, index) in contacts" class="flex">
+                <div>
+                    <img :src="contacts.avatar" :alt="contacts.name">
+                </div>
+                <div>
+                    <div>
+                        <p>{{name}}</p>
+                        <p>Ultimo messaggio inviato</p>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                    <li v-for="message in contact.messages">
+                        <p>{{ message.date }}</p>
+                    </li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <section class="chat-box">
             <div class="flex justify-space-between headed">
                 <div>
                     <img src="./img/avatar_2.jpg" alt="userPic">
                 </div>
-                <div>
+                <div class="icon-box flex  gap margin-right">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
+            <div class="chat-div height ">
 
+            </div>
         </section>
     </main>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>

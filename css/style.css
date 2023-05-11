@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0;
+}
+.gradient {
+    background: linear-gradient(to bottom, #029589 17%,#DFDAD4 17%);
+    height: 100vh;
+  }

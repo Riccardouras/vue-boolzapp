@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            selectedUser: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -173,6 +174,13 @@ createApp({
         }
     },
     methods: {
-       
+        formatTime(dateTime) {
+            const dateObject = new Date(dateTime);
+            const time = dateObject.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            return time;
+          },
+        showMessages(index) {
+            this.selectedUser = this.contacts[index];
+        }
     },
 }).mount("#app")

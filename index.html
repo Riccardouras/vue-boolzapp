@@ -15,7 +15,7 @@
             <!-- card header -->
             <div class="flex justify-space-between headed">
                 <div class="flex align-center">
-                    <img src="./img/avatar_1.jpg" alt="userPic">
+                    <img src="./img/avatar_io.jpg" alt="userPic">
                     <p class="">Sofia</p>
                 </div>
                 <div class="icon-box flex gap margin-right">
@@ -44,7 +44,7 @@
             </div>
             <!-- users -->
             <section class="scroll">
-                <div v-for="(user, index) in contacts" class="flex justify-space-between border-btm margin-top pad">
+                <div v-for="(user, index) in contacts" class="flex justify-space-between border-btm margin-top pad" @click="showMessages(index)">
                     <div class="flex">
                         <div>
                             <img :src="user.avatar" :alt="user.name">
@@ -80,19 +80,27 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
-            <div class="chat-div height-second-el ">
-
-            </div>
-            <div class="flex justify-space-around bg-chat">
-                <div class="icon-box">
-                    <i class="fa-regular fa-face-smile"></i>
+            <!-- chat -->
+            <div class="chat-div">
+                <div v-if="selectedUser">
+                    <div class="height-second-el ">
+                        <div v-for="message in selectedUser.messages" :class="{'message-sent': message.status === 'sent', 'message-received': message.status === 'received'}" class="message">
+                            <p>{{message.message}}</p>
+                            <p>{{formatTime(message.date)}}</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-space-around bg-chat">
+                        <div class="icon-box">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="scrivi un messaggio" class="input-message"> 
+                        </div>
+                        <div class="icon-box">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div >
+                    </div>
                 </div>
-                <div>
-                    <input type="text" placeholder="scrivi un messaggio" class="input-message"> 
-                </div>
-                <div class="icon-box">
-                    <i class="fa-solid fa-microphone"></i>
-                </div >
             </div>
         </section>
     </main>

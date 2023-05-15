@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             selectedUser: null,
+            newMessage: '',
+            searchInput: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -166,11 +168,7 @@ createApp({
                         }
                     ],
                 }
-            ]
-            
-            
-            
-           
+            ] 
         }
     },
     methods: {
@@ -179,8 +177,50 @@ createApp({
             const time = dateObject.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             return time;
           },
-        showMessages(index) {
+          showMessages(index) {
             this.selectedUser = this.contacts[index];
-        }
-    },
+          },
+          addMessage() {
+            if (this.newMessage.trim() === '') {
+              return;
+            }
+      
+            const newSentMessage = {
+              date: new Date().toISOString(),
+              message: this.newMessage,
+              status: 'sent',
+            };
+      
+            this.selectedUser.messages.push(newSentMessage);
+      
+            this.newMessage = '';
+      
+            setTimeout(this.receiveResponse, 1000);
+          },
+          receiveResponse() {
+            const newReceivedMessage = {
+              date: new Date().toISOString(),
+              message: 'Ok',
+              status: 'received',
+            };
+      
+            this.selectedUser.messages.push(newReceivedMessage);
+          },
+          filterContacts() {
+            if (this.searchInput.trim() === '') {
+                this.contacts.forEach((contact) => {
+                  contact.visible = true;
+                });
+              } else {
+                const query = this.searchInput.toLowerCase();
+            
+                this.contacts.forEach((contact) => {
+                  const contactName = contact.name.toLowerCase();
+                  contact.visible = contactName.includes(query);
+                });
+            }
+        },
+    }
+        
+        
 }).mount("#app")

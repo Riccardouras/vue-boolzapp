@@ -120,6 +120,8 @@ li{
 .message-sent {
     background-color: white;
     margin-left: 726px;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .message-received {

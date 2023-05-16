@@ -6,6 +6,7 @@ createApp({
             selectedUser: null,
             newMessage: '',
             searchInput: '',
+            filteredContacts: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -168,7 +169,7 @@ createApp({
                         }
                     ],
                 }
-            ] 
+            ],
         }
     },
     methods: {
@@ -207,20 +208,22 @@ createApp({
             this.selectedUser.messages.push(newReceivedMessage);
           },
           filterContacts() {
-            if (this.searchInput.trim() === '') {
-                this.contacts.forEach((contact) => {
-                  contact.visible = true;
-                });
-              } else {
-                const query = this.searchInput.toLowerCase();
-            
-                this.contacts.forEach((contact) => {
-                  const contactName = contact.name.toLowerCase();
-                  contact.visible = contactName.includes(query);
-                });
+            if (this.searchInput.trim() === "") {
+              this.filteredContacts = this.contacts;
+            } else {
+              this.filteredContacts = this.contacts.filter((contact) => {
+                const searchInput = this.searchInput.toLowerCase();
+                const contactName = contact.name.toLowerCase();
+    
+                return (
+                  contactName.includes(searchInput) 
+                );
+              });
             }
-        },
+    },
+},
+    mounted(){
+        this.filteredContacts = this.contacts;
     }
-        
         
 }).mount("#app")

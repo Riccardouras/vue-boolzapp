@@ -38,6 +38,7 @@
 }
 .notice{
     background-color: #8EDAFC;
+    padding: 0.5rem
 }
 .chat-box{
     width: 1000px;
@@ -51,25 +52,29 @@ img{
 }
 .absolute{
     position: absolute;
-    top: 15%;
-    left: 4%;
+    top: -23%;
+    left: 9%;
+}
+.f-size{
+    font-size: 2rem;
 }
 .fa-solid{
     color: #B1B1B1;
 }
 .input-size{
     width: 541px;
-    padding: 5px;
+    padding: 1rem;
 }
 .chat-div{
     background-image: url(../img/mine.jpg);
 }
 .height{
-    height: 747px;
+    height: 813px;
 }
 .height-second-el{
-    height: 650px;
+    height: 694px;
     padding: 20px;
+    overflow-y: scroll;
 }
 .icon-box{
     margin: auto 0;
@@ -129,4 +134,10 @@ li{
 .message>p:last-child{
     text-align: right;
     margin-right: 14px;
+}
+.bell{
+    padding: 1rem;
+    background-color: white;
+    border-radius: 100%;
+    margin: 0 10px;
 }

@@ -26,8 +26,8 @@
             </div>
             <!-- notice -->
             <div class="flex notice">
-                <div>
-                    <i class="fa-solid fa-bell-slash"></i>
+                <div class="bell">
+                    <i class="fa-solid fa-bell-slash "></i>
                 </div>
                 <div>
                     <p>Ricevi notifiche di nuovi messaggi</p>
@@ -37,14 +37,14 @@
             <!-- search-bar -->
             <div>
                 <label for="name" class="relative">
-                    <i class="fa-solid fa-magnifying-glass absolute"></i>
+                    <i class="fa-solid fa-magnifying-glass absolute f-size"></i>
                     <input class="input-size" type="search" placeholder="
-                    cerca o inizia una nuova chat">
+                    cerca o inizia una nuova chat" v-model="searchInput" @input="filterContacts">
                 </label>
             </div>
             <!-- users -->
             <section class="scroll">
-                <div v-for="(user, index) in contacts" class="flex justify-space-between border-btm margin-top pad" @click="showMessages(index)">
+                <div v-for="(user, index) in filteredContacts"  class="flex justify-space-between border-btm margin-top pad" @click="showMessages(index)" >
                     <div class="flex">
                         <div>
                             <img :src="user.avatar" :alt="user.name">
@@ -94,7 +94,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div>
-                            <input type="text" placeholder="scrivi un messaggio" class="input-message"> 
+                            <input type="text" placeholder="scrivi un messaggio" class="input-message" v-model="newMessage" @keyup.enter="addMessage"> 
                         </div>
                         <div class="icon-box">
                             <i class="fa-solid fa-microphone"></i>
